@@ -14,6 +14,7 @@ struct ListRowView: View {
                 .foregroundColor(item.isCompleted ? Color.green : Color.red)
             Text(item.title)
             Spacer()
+            
         }
     }
 }
