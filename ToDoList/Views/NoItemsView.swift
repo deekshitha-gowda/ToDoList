@@ -13,7 +13,9 @@ struct NoItemView: View {
                     .fontWeight(.semibold)
                 Text(
                     "Are you a productive person? I think you should click the add button and ass a bunch of items to your todo list!"
-                ).padding(.bottom, 30)
+                )
+                .padding(.bottom, 30)
+
                 NavigationLink(destination: AddView()) {
                     Text("Add Something")
                         .foregroundColor(.white)
@@ -27,15 +29,19 @@ struct NoItemView: View {
                 }
                 .padding(.horizontal, animated ? 30 : 50)
                 .shadow(
-                    color: animated ? secondaryColor.opacity(0.7) : Color.accentColor.opacity(0.7),
+                    color: animated
+                        ? secondaryColor.opacity(0.7)
+                        : Color.accentColor.opacity(0.7),
                     radius: animated ? 30 : 10,
                     x: 0,
                     y: animated ? 50 : 30
                 )
                 .scaleEffect(animated ? 1.1 : 1.0)
-                .offset(y : animated ? -7 : 0)
+                .offset(y: animated ? -7 : 0)
 
-            }.multilineTextAlignment(.center)
+            }
+            .frame(maxWidth: 400)
+            .multilineTextAlignment(.center)
                 .padding(40)
                 .onAppear(perform: addAnimation)
         }
@@ -52,7 +58,7 @@ struct NoItemView: View {
             ) {
                 animated.toggle()
                 print("second\(animated)")
-               
+
             }
         }
     }
